@@ -1,0 +1,171 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Material You (Material Design 3) — Purple seed #6750A4
+   Tonal system via plain CSS vars so every `rgb(var(--color-*))`
+   reference across the app inherits the new look automatically.
+   ============================================================ */
+
+:root {
+  /* Core — MD3 light scheme (#6750A4 seed) */
+  --color-primary: 103 80 164;        /* #6750A4 · seed */
+  --color-primary-hover: 90 67 147;   /* darker purple for hover */
+  --color-bg: 255 251 254;            /* #FFFBFE · surface (never pure white) */
+  --color-surface: 243 237 247;       /* #F3EDF7 · surface container (cards) */
+  --color-surface-secondary: 231 224 236; /* #E7E0EC · surface container low (inputs/recessed) */
+  --color-text: 28 27 31;             /* #1C1B1F · on surface */
+  --color-text-muted: 73 69 79;       /* #49454F · on surface variant */
+  --color-text-faint: 121 116 126;    /* #79747E · outline (weak text) */
+  --color-border: 202 196 208;        /* #CAC4D0 · outline variant (hairlines) */
+
+  /* Accents — MD3 secondary/tertiary + containers */
+  --color-accent-sage: 103 80 164;            /* primary (logo, active, completed) */
+  --color-accent-sage-light: 234 221 255;     /* #EADDFF · primary container */
+  --color-accent-blue: 98 91 113;             /* #625B71 · secondary */
+  --color-accent-blue-light: 232 222 248;     /* #E8DEF8 · secondary container */
+  --color-accent-lavender: 103 80 164;        /* primary (icon accent) */
+  --color-accent-lavender-light: 234 221 255; /* primary container */
+  --color-accent-orange: 125 82 96;           /* #7D5260 · tertiary (warm accent/pins) */
+  --color-accent-orange-light: 255 216 228;   /* #FFD8E4 · tertiary container */
+
+  --color-danger: 186 26 26;          /* #BA1A1A · error */
+  --color-danger-light: 249 222 220;  /* #F9DEDC · error container */
+
+  --font-brand: 'Roboto', system-ui, -apple-system, sans-serif;
+}
+
+.dark {
+  /* Core — MD3 dark scheme */
+  --color-primary: 208 188 255;       /* #D0BCFF */
+  --color-primary-hover: 219 206 255; /* #DBCFFF */
+  --color-bg: 20 18 24;               /* #141218 · surface */
+  --color-surface: 33 31 38;          /* #211F26 · surface container */
+  --color-surface-secondary: 29 27 32;/* #1D1B20 · surface container low */
+  --color-text: 230 225 233;          /* #E6E0E9 · on surface */
+  --color-text-muted: 202 196 208;    /* #CAC4D0 · on surface variant */
+  --color-text-faint: 147 143 153;    /* #938F99 · outline */
+  --color-border: 73 69 79;           /* #49454F · outline variant */
+
+  --color-accent-sage: 208 188 255;
+  --color-accent-sage-light: 79 55 139;   /* #4F378B · primary container */
+  --color-accent-blue: 204 194 220;       /* #CCC2DC · secondary */
+  --color-accent-blue-light: 74 68 88;    /* #4A4458 · secondary container */
+  --color-accent-lavender: 208 188 255;
+  --color-accent-lavender-light: 79 55 139;
+  --color-accent-orange: 239 184 200;     /* #EFB8C8 · tertiary */
+  --color-accent-orange-light: 86 45 62;  /* #562D3E · tertiary container */
+
+  --color-danger: 242 184 181;        /* #F2B8B5 · error */
+  --color-danger-light: 140 29 24;    /* #8C1D18 · error container */
+}
+
+/* ============================================================
+   Tailwind v4 theme remap — organic Material You radii.
+   `rounded-xl` on cards/dialogs now = 24px, `rounded-lg` = 16px,
+   `rounded-2xl` = 28px. Buttons get `rounded-full` directly.
+   ============================================================ */
+@theme {
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 28px;
+  --radius-3xl: 32px;
+  --radius-4xl: 48px;
+  --ease-m3: cubic-bezier(0.2, 0, 0, 1);
+}
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+body {
+  font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text));
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Brand/headline treatment — Roboto Medium with tight tracking (MD3 headline) */
+.font-brand {
+  font-family: var(--font-brand);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Signature eased motion */
+.ease-m3 {
+  transition-timing-function: cubic-bezier(0.2, 0, 0, 1);
+}
+
+/* ============================================================
+   Micro-animations (fun, motivating)
+   ============================================================ */
+@keyframes confetti-fall {
+  0% {
+    transform: translate(var(--dx, 0), 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(var(--dx, 0) * 1.6), var(--dy, 140px)) rotate(calc(var(--rot, 360deg)));
+    opacity: 0;
+  }
+}
+.animate-confetti {
+  animation: confetti-fall 0.9s cubic-bezier(0.2, 0, 0, 1) forwards;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.85); opacity: 0; }
+  60% { transform: scale(1.04); }
+  100% { transform: scale(1); opacity: 1; }
+}
+.animate-pop {
+  animation: pop 0.35s cubic-bezier(0.2, 0, 0, 1) both;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-floaty {
+  animation: floaty 4s ease-in-out infinite;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  20% { transform: rotate(-6deg); }
+  40% { transform: rotate(6deg); }
+  60% { transform: rotate(-3deg); }
+  80% { transform: rotate(3deg); }
+}
+.animate-wiggle {
+  animation: wiggle 0.6s ease-in-out;
+}
+
+@keyframes ring-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgb(var(--color-primary) / 0.25); }
+  50% { box-shadow: 0 0 0 8px rgb(var(--color-primary) / 0); }
+}
+.animate-ring-glow {
+  animation: ring-glow 2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body, html { background: white !important; }
+  body * { visibility: hidden; }
+  .print-content, .print-content * { visibility: visible; }
+  .print-content { position: absolute; left: 0; top: 0; width: 100%; padding: 40px; }
+}

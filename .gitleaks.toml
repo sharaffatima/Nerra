@@ -1,0 +1,13 @@
+# gitleaks allow/deny configuration.
+# Full docs: https://github.com/gitleaks/gitleaks/blob/master/README.md
+
+title = "Nerra secret scan"
+
+[extend]
+useDefault = true
+
+[allowlist]
+description = "Allowlisted entries"
+paths = [
+  "(^|/)(.env.example|package-lock.json)$",
+]
