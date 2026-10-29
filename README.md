@@ -1,6 +1,42 @@
 # Nerra
 
+<div align="center">
+  <strong>A calmer space for everything you need to get done.</strong>
+  <br />
+  Tasks, notes, and reminders in one thoughtful, bilingual workspace.
+</div>
+
 Nerra is a personal productivity app for organizing tasks, notes, and reminders in workspaces. It includes a dashboard, browser notifications, focus tools, and optional voice capture that turns spoken ideas into editable tasks and reminders. The interface supports English and Arabic, including right-to-left layouts, and light and dark themes.
+
+## Screenshots
+
+<div align="center">
+  <img src="Screenshots/dashboard.png" alt="Nerra dashboard with productivity overview, focus timer, and upcoming reminders" width="900" />
+  <br />
+  <em>Your day at a glance: progress, focus time, and what is coming up.</em>
+</div>
+
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img src="Screenshots/tasks.png" alt="Nerra todo list with a task being created" width="100%" />
+      <br />
+      <em>Capture tasks and due dates in your workspace.</em>
+    </td>
+    <td align="center" width="50%">
+      <img src="Screenshots/notes.png" alt="Nerra note editor with formatting tools and tags" width="100%" />
+      <br />
+      <em>Write and organize notes with simple formatting.</em>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" colspan="2">
+      <img src="Screenshots/voice-capture-unsupported-browser.png" alt="Nerra voice capture dialog with a browser compatibility notice" width="70%" />
+      <br />
+      <em>Capture ideas by voice with browser speech recognition (Chrome or Edge recommended).</em>
+    </td>
+  </tr>
+</table>
 
 ## How it works
 

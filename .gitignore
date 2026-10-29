@@ -41,3 +41,15 @@ logs/
 # Local/editor files
 .DS_Store
 Thumbs.db
+
+# Keep only the screenshots displayed in the README
+Screenshots/*
+!Screenshots/dashboard.png
+!Screenshots/notes.png
+!Screenshots/tasks.png
+!Screenshots/voice-capture-unsupported-browser.png
+README.md
+Screenshots/dashboard.png
+Screenshots/notes.png
+Screenshots/tasks.png
+Screenshots/voice-capture-unsupported-browser.png
